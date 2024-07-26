@@ -1,0 +1,10 @@
+docker ps
+docker volume prune 
+docker container prune 
+docker network prune 
+docker container run --name mysql-razif -e MYSQL_ROOT_PASSWORD=admin -p 3307:3306 mysql:latest 
+docker start mysql-razif
+docker exec -it mysql-razif mysql -u root -p
+docker logs mysql-razif 
+netstat -tulpn
+
